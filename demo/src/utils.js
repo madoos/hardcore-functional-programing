@@ -27,6 +27,6 @@ const asTask = curry((TaskConstructor, f) =>
 )
 
 // fork :: (a -> b) -> Task e a
-const fork = curry((success, future) => future.fork(console.error, success))
+const fork = curry((error, success, task) => task.fork(error, success))
 
 export {asIO, eventAsStream, runIO, mapS, asTask, fork}

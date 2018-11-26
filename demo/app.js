@@ -92,7 +92,7 @@ const renderResults = compose(
     getLiItems
 )
 
-const renderAsyncResults = fork(renderResults)
+const renderAsyncResults = fork(console.error, renderResults)
 
 const renderVideo = compose(
     map(html.render('#player')),
